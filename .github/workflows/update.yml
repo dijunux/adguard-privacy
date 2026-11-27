@@ -9,6 +9,7 @@ on:
       - '.github/workflows/update.yml'
       - 'update_rules.py'
       - 'verify_subscription.py'
+      - 'validate_adguard.py'
 permissions:
   contents: write
 concurrency:
@@ -21,18 +22,20 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out this repository only
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
       - name: Test preservation and failure recovery
         run: python3 update_rules.py --test
       - name: Download, validate, merge and enforce resource budget
         run: python3 update_rules.py
+      - name: Validate with AdGuard Home and measure memory
+        run: python3 validate_adguard.py
       - name: Publish validated files atomically
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- adguard.txt status.json sources/
+          git add -- adguard.txt status.json consumer-validation.json sources/
           if ! git diff --cached --quiet; then
             git commit -m 'Update validated privacy rules'
             git push origin HEAD:main
