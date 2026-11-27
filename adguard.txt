@@ -1,7 +1,7 @@
 ! Title: AdGuard Privacy - GL-MT3600BE
 ! Expires: 1 day
 ! Homepage: https://github.com/dijunux/adguard-privacy
-! Updated: 2026-11-27T16:23:35.389309+00:00
+! Updated: 2026-11-27T16:31:11.356144+00:00
 ! Rules: 169934
 ! Upstream rules retain their original licenses; see sources/ and README.md.
 ! Source: anti-AD - https://github.com/privacy-protection-tools/anti-AD

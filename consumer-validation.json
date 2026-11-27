@@ -1,0 +1,44 @@
+{
+  "validated_at": "2026-11-27T16:31:14.085949+00:00",
+  "engine": "AdGuard Home, version v1.0.0",
+  "platform": "Linux amd64",
+  "gomemlimit": "128MiB",
+  "memory": {
+    "VmHWM_KiB": 95520,
+    "VmRSS_KiB": 69368
+  },
+  "rules_loaded": 169934,
+  "bytes": 4010570,
+  "subscription_sha256": "a2f580a093beda0cacf776624fefc5c478f53f73c74c0b8557072ff9fe394138",
+  "checks": {
+    "doubleclick.net": {
+      "reason": "FilteredBlackList",
+      "rules": [
+        "||doubleclick.net^"
+      ],
+      "cname": ""
+    },
+    "ad.azure.com": {
+      "reason": "NotFilteredWhiteList",
+      "rules": [
+        "@@||ad.azure.com^"
+      ],
+      "cname": ""
+    },
+    "adfractal.com": {
+      "reason": "RewriteRule",
+      "rules": [
+        "||adfractal.com^$dnsrewrite=ad-block.dns.adguard.com"
+      ],
+      "cname": "ad-block.dns.adguard.com"
+    },
+    "analytics.example.org": {
+      "reason": "FilteredBlackList",
+      "rules": [
+        "/^(\\S+\\.)?analytics(\\-|\\.)/"
+      ],
+      "cname": ""
+    }
+  },
+  "scope": "Isolated engine load and rule matching test; not a GL-MT3600BE hardware benchmark."
+}

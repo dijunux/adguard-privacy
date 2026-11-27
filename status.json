@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T16:23:35.389309+00:00",
+  "updated_at": "2026-11-27T16:31:11.356144+00:00",
   "bytes": 4010570,
   "max_bytes": 4100000,
   "rules": 169934,
@@ -8,7 +8,7 @@
   "covered_subdomains_removed": 4220,
   "allow_rules": 110,
   "special_rules": 1145,
-  "sha256": "956f3044cd318a60945e7c327f7219c83f12907adb1b7e8dfac095bdc9891b0d",
+  "sha256": "a2f580a093beda0cacf776624fefc5c478f53f73c74c0b8557072ff9fe394138",
   "sources": {
     "anti-ad": {
       "name": "anti-AD",
@@ -19,7 +19,7 @@
       "sha256": "db1f5fbb48376dca5c101451633167aac1e0af67f11bdcdf6857d224df228591",
       "status": "fresh",
       "error": null,
-      "fetched_at": "2026-11-27T16:23:35.576053+00:00"
+      "fetched_at": "2026-11-27T16:31:11.641259+00:00"
     },
     "awavenue": {
       "name": "AWAvenue / 秋风广告规则",
@@ -30,7 +30,7 @@
       "sha256": "9c7204be5180e33ed97d2f7b8dc9fc1b61e6aabdaafa149ed9165636294f7f7b",
       "status": "fresh",
       "error": null,
-      "fetched_at": "2026-11-27T16:23:35.617405+00:00"
+      "fetched_at": "2026-11-27T16:31:11.760862+00:00"
     },
     "popup": {
       "name": "AdGuard DNS Popup Hosts filter",
@@ -41,7 +41,7 @@
       "sha256": "8803a383f6a830d5d0e15ec20ffdf8b168010e06ab8392c0a768aebc5b4583a6",
       "status": "fresh",
       "error": null,
-      "fetched_at": "2026-11-27T16:23:35.697511+00:00"
+      "fetched_at": "2026-11-27T16:31:11.923356+00:00"
     },
     "hagezi": {
       "name": "HaGeZi Multi PRO mini",
@@ -52,7 +52,7 @@
       "sha256": "40eaa9621fc5a50f5275e764a2d042fff0b1108b890b5b54e79f6b67f0825148",
       "status": "fresh",
       "error": null,
-      "fetched_at": "2026-11-27T16:23:35.870003+00:00"
+      "fetched_at": "2026-11-27T16:31:12.293738+00:00"
     }
   }
 }
