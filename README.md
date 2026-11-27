@@ -13,7 +13,8 @@ https://raw.githubusercontent.com/dijunux/adguard-privacy/main/adguard.txt
 - GitHub Actions 每天 **北京时间 03:23（UTC 19:23）**运行，可在 Actions 手动运行。
 - 每个来源超时 45 秒，最多尝试 3 次；拒绝空文件、HTML、未知格式、过小列表及相较上一版骤减超过 30% 的列表。
 - 各源上一份有效原文持久保存在 `sources/*.txt.gz`，有 SHA-256 校验；下载或校验失败时使用该源缓存。首次无缓存则停止，不发布残缺列表。
-- 合并、测试和体积检查全部通过后，单次 Git 提交原子发布。失败时线上 `adguard.txt` 保持上一份有效版本。
+- 每次发布前使用官方 AdGuard Home v1.0.0（校验固定 SHA-256）实际加载候选规则，检查拦截、白名单、正则和 DNS 重写；测试进程峰值 RSS 必须低于 256 MiB。结果写入 `consumer-validation.json`。
+- 合并、引擎加载测试和体积检查全部通过后，单次 Git 提交原子发布。失败时线上 `adguard.txt` 保持上一份有效版本。
 - 白名单、正则、通配符以及 `$dnsrewrite`、`$important`、`$badfilter` 等修饰符完整保留。不把规则简化成纯域名。
 - 先按完整规则去重，再删除已被有效父域名规则覆盖的普通子域名拦截规则；不改动特殊规则和白名单，不以截断文件来满足上限。
 - `status.json` 记录规则数、字节数、哈希、来源更新时间及 fresh/cached 状态。Actions 页面保存构建、故障模拟和在线订阅校验结果。
@@ -42,5 +43,6 @@ https://raw.githubusercontent.com/dijunux/adguard-privacy/main/adguard.txt
 - 更新程序：`update_rules.py`（仅 Python 标准库）。
 - 离线安全测试：`python update_rules.py --test`。
 - 构建：`python update_rules.py`。
+- 引擎验证：`python validate_adguard.py`（Linux amd64，下载固定版本官方程序；失败即停止发布）。
 - 工作流：`.github/workflows/update.yml`。
 - 权限仅为本仓库 `contents: write`，使用 GitHub 自动提供的短期 `GITHUB_TOKEN`；不需要个人令牌或其他私有仓库权限。
