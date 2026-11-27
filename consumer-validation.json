@@ -1,15 +1,15 @@
 {
-  "validated_at": "2026-11-27T16:31:14.085949+00:00",
+  "validated_at": "2026-11-27T20:15:46.607088+00:00",
   "engine": "AdGuard Home, version v1.0.0",
   "platform": "Linux amd64",
   "gomemlimit": "128MiB",
   "memory": {
-    "VmHWM_KiB": 95520,
-    "VmRSS_KiB": 69368
+    "VmHWM_KiB": 95296,
+    "VmRSS_KiB": 84588
   },
   "rules_loaded": 169934,
   "bytes": 4010570,
-  "subscription_sha256": "a2f580a093beda0cacf776624fefc5c478f53f73c74c0b8557072ff9fe394138",
+  "subscription_sha256": "efdaa20f48c217e7a97595f3efed64f18afc64a5f8c971b9facf764a7fed2943",
   "checks": {
     "doubleclick.net": {
       "reason": "FilteredBlackList",
