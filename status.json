@@ -1,0 +1,58 @@
+{
+  "updated_at": "2026-11-27T16:23:35.389309+00:00",
+  "bytes": 4010570,
+  "max_bytes": 4100000,
+  "rules": 169934,
+  "input_rules": 193779,
+  "exact_duplicates_removed": 19625,
+  "covered_subdomains_removed": 4220,
+  "allow_rules": 110,
+  "special_rules": 1145,
+  "sha256": "956f3044cd318a60945e7c327f7219c83f12907adb1b7e8dfac095bdc9891b0d",
+  "sources": {
+    "anti-ad": {
+      "name": "anti-AD",
+      "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt",
+      "homepage": "https://github.com/privacy-protection-tools/anti-AD",
+      "rules": 96458,
+      "bytes": 2105681,
+      "sha256": "db1f5fbb48376dca5c101451633167aac1e0af67f11bdcdf6857d224df228591",
+      "status": "fresh",
+      "error": null,
+      "fetched_at": "2026-11-27T16:23:35.576053+00:00"
+    },
+    "awavenue": {
+      "name": "AWAvenue / 秋风广告规则",
+      "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
+      "homepage": "https://github.com/TG-Twilight/AWAvenue-Ads-Rule",
+      "rules": 982,
+      "bytes": 23771,
+      "sha256": "9c7204be5180e33ed97d2f7b8dc9fc1b61e6aabdaafa149ed9165636294f7f7b",
+      "status": "fresh",
+      "error": null,
+      "fetched_at": "2026-11-27T16:23:35.617405+00:00"
+    },
+    "popup": {
+      "name": "AdGuard DNS Popup Hosts filter",
+      "url": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/adguard_popup_filter.txt",
+      "homepage": "https://github.com/AdguardTeam/AdGuardSDNSFilter",
+      "rules": 1044,
+      "bytes": 57343,
+      "sha256": "8803a383f6a830d5d0e15ec20ffdf8b168010e06ab8392c0a768aebc5b4583a6",
+      "status": "fresh",
+      "error": null,
+      "fetched_at": "2026-11-27T16:23:35.697511+00:00"
+    },
+    "hagezi": {
+      "name": "HaGeZi Multi PRO mini",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "rules": 95295,
+      "bytes": 2336925,
+      "sha256": "40eaa9621fc5a50f5275e764a2d042fff0b1108b890b5b54e79f6b67f0825148",
+      "status": "fresh",
+      "error": null,
+      "fetched_at": "2026-11-27T16:23:35.870003+00:00"
+    }
+  }
+}
