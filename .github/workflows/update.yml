@@ -1,0 +1,51 @@
+name: Update privacy rules
+on:
+  schedule:
+    - cron: '23 19 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update.yml'
+      - 'update_rules.py'
+      - 'verify_subscription.py'
+permissions:
+  contents: write
+concurrency:
+  group: privacy-rules-main
+  cancel-in-progress: false
+jobs:
+  update:
+    if: github.repository == 'dijunux/adguard-privacy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out this repository only
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Test preservation and failure recovery
+        run: python3 update_rules.py --test
+      - name: Download, validate, merge and enforce resource budget
+        run: python3 update_rules.py
+      - name: Publish validated files atomically
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- adguard.txt status.json sources/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update validated privacy rules'
+            git push origin HEAD:main
+          fi
+      - name: Verify public subscription and immutable commit
+        run: python3 verify_subscription.py "$(git rev-parse HEAD)"
+      - name: Report retained source snapshots
+        run: |
+          python3 - <<'PY'
+          import json
+          status = json.load(open('status.json'))
+          stale = [key for key, row in status['sources'].items() if row['status'] != 'fresh']
+          if stale:
+              raise SystemExit('Published using valid cached sources; upstream retry needed: ' + ', '.join(stale))
+          print('All four sources fetched successfully; subscription verified.')
+          PY
